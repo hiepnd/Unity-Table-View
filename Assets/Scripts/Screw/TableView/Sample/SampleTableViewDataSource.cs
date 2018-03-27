@@ -23,7 +23,7 @@ public class SampleTableViewDataSource : AbstractTableViewDataSource
     {
         if (data[section].header == null)
             return 0;
-        return tableView.direction == TableView.Direction.Verical ? data[section].header.Rect.sizeDelta.y : data[section].header.Rect.sizeDelta.x;
+        return tableView.direction == TableView.Direction.Vertical ? data[section].header.Rect.sizeDelta.y : data[section].header.Rect.sizeDelta.x;
     }
 
     public override int GetNumberOfRows(TableView tableView, int section)
@@ -38,7 +38,7 @@ public class SampleTableViewDataSource : AbstractTableViewDataSource
 
     public override float GetRowHeight(TableView tableView, int section, int row)
     {
-        return tableView.direction == TableView.Direction.Verical ? data[section].cell.Rect.sizeDelta.y : data[section].cell.Rect.sizeDelta.x;
+        return tableView.direction == TableView.Direction.Vertical ? data[section].cell.Rect.sizeDelta.y : data[section].cell.Rect.sizeDelta.x;
     }
 
     public override float GetRowSpacing(TableView tableView, int section)

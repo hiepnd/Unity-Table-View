@@ -22,7 +22,7 @@ public class TableView : MonoBehaviour
             var contentRect = scrollRect.content.rect;
             var viewportRect = scrollRect.viewport.rect;
 
-            if (direction == Direction.Verical) {
+            if (direction == Direction.Vertical) {
                 var viewportMax = viewportRect.max;
                 viewportMax = scrollRect.viewport.TransformPoint(viewportMax);
                 viewportMax = scrollRect.content.InverseTransformPoint(viewportMax);
@@ -44,7 +44,7 @@ public class TableView : MonoBehaviour
             var contentRect = scrollRect.content.rect;
             var viewportRect = scrollRect.viewport.rect;
 
-            if (direction == Direction.Verical)
+            if (direction == Direction.Vertical)
             {
                 var viewportMin = viewportRect.min;
                 viewportMin = scrollRect.viewport.TransformPoint(viewportMin);
@@ -129,7 +129,7 @@ public class TableView : MonoBehaviour
 
         tableSize = new TableSize(this, datasource);
         var contentSize = scrollRect.content.sizeDelta;
-        if (direction == Direction.Verical) {
+        if (direction == Direction.Vertical) {
             contentSize.y = tableSize.TotalHeight;
         } else {
             contentSize.x = tableSize.TotalHeight;
@@ -273,12 +273,12 @@ public class TableView : MonoBehaviour
 
     private void AddCell(TableViewCell cell, float offset, bool atFirst)
     {
-        if (direction == Direction.Verical)
+        if (direction == Direction.Vertical)
             offset = -offset;
         var rect = cell.Rect;
         rect.SetParent(scrollRect.content, false);
         rect.localScale = Vector3.one;
-        if (direction == Direction.Verical) {
+        if (direction == Direction.Vertical) {
             rect.pivot = new Vector2(0.5f, 1);
             rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 1);
             rect.anchoredPosition = new Vector2(0, offset);    
@@ -583,7 +583,7 @@ public class TableView : MonoBehaviour
 
     public enum Direction
     {
-        Verical,
+        Vertical,
         Horizontal
     }
 
